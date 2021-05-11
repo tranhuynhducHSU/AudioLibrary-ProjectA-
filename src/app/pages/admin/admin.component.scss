@@ -1,0 +1,36 @@
+.conterner {
+  position: absolute;
+  width: 90vw;
+  margin-top: 2vw;
+  margin-left: 5vw;
+  padding-bottom: 2vw;
+}
+.menu {
+  background-color: lightblue;
+  border-radius: 20px 0 0 40px;
+  z-index: 5;
+}
+.main {
+  background-image: url("../../../assets/Pau Storch/gf110mmf2-r-lm-wr_img03.jpg");
+  border-radius: 0 20px 40px 0;
+  margin-left: -2px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
+}
+.brPlay {
+  width: calc(90vw - 3px);
+  height: 5vw;
+  background-color: #13172c;
+  position: absolute;
+  margin-top: 38vw;
+}
+.playAudio {
+  height: 100%;
+  background-color: #13172c;
+  width: calc(100% - 3px);
+  position: absolute;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  left: 0;
+}
