@@ -1,0 +1,38 @@
+<div id="hover">
+    <div *ngIf="song['isActivate']==false" class="songs">
+        <div class="left ArtistsImg" style="width: 10%;">
+        <img class="ArtistsImg" src="../../../../../assets/Songs/img/{{song['avarImg']}}" alt="">
+        </div>
+        <div class="left ArtistsInfo" style="width: 70%;">
+        <p class="nameS">{{song['nameSong']}}</p>
+        <p class="nameA">{{song['nameArtist']}}</p>
+        </div>
+        <div class="timeSong left" style="width: 10%;">
+            {{song['timeSong']}}
+        </div>
+        <div class="iconPlay left" style="width: 6%;">
+        <mat-icon class="icon">
+            video_library
+        </mat-icon>
+        </div>
+    </div>
+    
+    <div *ngIf="song['isActivate']==true" class="songs isActivate">
+        <div class="left ArtistsImg" style="width: 10%;">
+        <img class="ArtistsImg" src="../../../../../assets/Songs/img/{{song['avarImg']}}" alt="">
+        </div>
+        <div class="left ArtistsInfo" style="width: 70%;">
+        <p class="nameS">{{song['nameSong']}}</p>
+        <p class="nameA">{{song['nameArtist']}}</p>
+        </div>
+        <div class="timeSong left" style="width: 10%;">
+            {{song['timeSong']}}
+        </div>
+        <div class="iconPlay left" style="width: 6%;">
+        <mat-icon class="icon">
+            video_library
+        </mat-icon>
+        </div>
+    </div>
+</div>
+

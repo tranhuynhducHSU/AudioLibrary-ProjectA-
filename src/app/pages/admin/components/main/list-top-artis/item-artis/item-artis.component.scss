@@ -1,0 +1,22 @@
+.imgArtis {
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 7.7vw;
+    width: 7.7vw;
+  }
+}
+.nameArtis {
+  font-size: 1.2vw;
+  font-family: inherit;
+  font-weight: 400;
+  margin-top: 0.4vw;
+  p {
+    margin: 0;
+    font-family: cursive;
+  }
+}
+.des {
+  font-size: 0.77vw;
+  color: #b1b3c5;
+}

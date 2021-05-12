@@ -8,9 +8,15 @@ import { MainComponent } from './components/main/main.component';
 import { PlayComponent } from './components/play/play.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material-module';
+import { ListSongComponent } from './components/main/list-song/list-song.component';
+import { SongItemComponent } from './components/main/list-song/song-item/song-item.component';
+import { ListTopArtisComponent } from './components/main/list-top-artis/list-top-artis.component';
+import { ItemArtisComponent } from './components/main/list-top-artis/item-artis/item-artis.component';
+import { PlayListComponent } from './components/main/play-list/play-list.component';
+import { PlayListItemComponent } from './components/main/play-list/play-list-item/play-list-item.component';
 
 @NgModule({
-  declarations: [AdminComponent, NavComponent, MainComponent, PlayComponent],
+  declarations: [AdminComponent, NavComponent, MainComponent, PlayComponent, ListSongComponent, SongItemComponent, ListTopArtisComponent, ItemArtisComponent, PlayListComponent, PlayListItemComponent],
   imports: [CommonModule, AdminRoutingModule, MaterialModule, FormsModule],
 })
 export class AdminModule {}
