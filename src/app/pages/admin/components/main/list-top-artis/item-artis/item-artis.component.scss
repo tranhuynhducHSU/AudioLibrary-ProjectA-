@@ -1,3 +1,10 @@
+.hover:hover {
+  color: #e735c9;
+  transform: scale(0.9);
+}
+.hover {
+  transition: 0.5s;
+}
 .imgArtis {
   img {
     border-radius: 50%;

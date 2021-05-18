@@ -1,11 +1,11 @@
 <div class="left" style="width: 2%;"></div>
 <div class="left" style="width: 2%;"></div>
 <div class="left ArtistsImg" style="width: 4%;">
-    <img class="ArtistsImg" src="../../../../../assets/Slipknot/Untitled.png" alt="">
+    <img class="ArtistsImg" src="../../../../../assets/Songs/img/{{songService.songPlaying.avarImg}}" alt="">
 </div>
 <div class="left ArtistsInfo" style="width: 12%;">
-    <p class="nameS">UnSainted</p>
-    <p class="nameA">Slipknot</p>
+    <p class="nameS">{{sv.cutString(songService.songPlaying.nameSong,15)}}</p>
+    <p class="nameA">{{sv.cutString(songService.songPlaying.nameArtist,19)}}</p>
 </div>
 <div class="left ButtonPlay" style="width: 11%;">
     <div class="left" style="width: 27%;">
@@ -14,10 +14,10 @@
         </mat-icon>
     </div>
     <div class="left" style="width: 46%;">
-        <mat-icon *ngIf="isPlay" class="pau" (click)="play()">
+        <mat-icon *ngIf="songService.isPlay" class="pau" (click)="audioS.pause()">
             pause_circle_filled
         </mat-icon>
-        <mat-icon *ngIf="!isPlay" class="pau" (click)="play()">
+        <mat-icon *ngIf="!songService.isPlay" class="pau" (click)="audioS.play()">
             play_circle_filled
         </mat-icon>
     </div>
@@ -28,13 +28,15 @@
     </div>
 </div>
 <div class="left TimePlay" style="width: 3%;">
-    <div *ngIf="timeS>9" style="padding-left: 0.6vw;">{{timeM}}: {{timeS}}</div>
-    <div *ngIf="timeS<10" style="padding-left: 0.6vw;">{{timeM}}: {{"0"+timeS.toString()}}</div>
+    <!-- <div *ngIf="timeS>9" style="padding-left: 0.6vw;">{{timeM}}: {{timeS}}</div> -->
+    <!-- <div *ngIf="timeS<10" style="padding-left: 0.6vw;">{{timeM}}: {{"0"+timeS.toString()}}</div> -->
+    <div style="padding-left: 0.6vw;">{{getM(audioS.time)}}: {{getS(audioS.time)}}</div>
+
 
 </div>
 <div class="left WaveMucsic" style="width: 47%;">
     <!-- <img src="../../../../../assets/wave.png" style="width: 52vw;padding-top: 0.5vw;" alt=""> -->
-    <mat-progress-bar class="progress" mode="determinate" value="{{percentProcess}}"></mat-progress-bar>
+    <mat-progress-bar class="progress" mode="determinate" value="{{audioS.percentProcess}}"></mat-progress-bar>
 </div>
 <div class="left TimePlay" style="width: 3%;">
     <p style="padding-left: 0vw;">{{minEnd}}:{{secEnd}}</p>

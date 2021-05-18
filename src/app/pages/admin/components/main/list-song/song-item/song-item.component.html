@@ -1,5 +1,5 @@
-<div id="hover">
-    <div *ngIf="song['isActivate']==false" class="songs">
+<div id="hover" >
+    <div *ngIf="songService.songPlaying['sid']!=song['sid']" class="songs" (click)="changeSong()">
         <div class="left ArtistsImg" style="width: 10%;">
         <img class="ArtistsImg" src="../../../../../assets/Songs/img/{{song['avarImg']}}" alt="">
         </div>
@@ -17,7 +17,7 @@
         </div>
     </div>
     
-    <div *ngIf="song['isActivate']==true" class="songs isActivate">
+    <div *ngIf="songService.songPlaying['sid']==song['sid']" class="songs isActivate">
         <div class="left ArtistsImg" style="width: 10%;">
         <img class="ArtistsImg" src="../../../../../assets/Songs/img/{{song['avarImg']}}" alt="">
         </div>

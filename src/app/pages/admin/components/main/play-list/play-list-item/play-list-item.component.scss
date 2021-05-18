@@ -1,3 +1,10 @@
+.hover:hover {
+  color: #e735c9;
+  transform: scale(0.95);
+}
+.hover {
+  transition: 0.5s;
+}
 .left {
   float: left;
   overflow: hidden;

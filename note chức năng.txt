@@ -1,0 +1,5 @@
+Kiểm tra mạng, thông báo
+Kiểm tra server, thông báo
+Tua nhạc khi ấn vào process bar
+Time song chưa đúng
+Refresh trang load tại vị trí cũ

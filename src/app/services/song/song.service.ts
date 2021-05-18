@@ -4,97 +4,118 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SongService {
+  isPlay = false;
   songs = [];
   topArtists = [];
   playList = [];
+
+  songPlaying = {
+    sid: '',
+    src: '',
+    avarImg: '',
+    nameSong: '',
+    nameArtist: '',
+    timeSong: '',
+  };
   constructor() {
     this.songs = [
       {
+        sid: '001',
+        src: 'SthlmSunset.mp3',
         avarImg: 'Untitled.png',
         nameSong: 'Nu Lounge Bar',
-        nameArtist: 'EHRLING',
+        nameArtist: 'Ehrling',
         timeSong: '4:45',
-        isActivate: false,
       },
       {
+        sid: '002',
+        src: 'Dua Lipa - Levitating Featuring DaBaby (Official Music Video).mp3',
         avarImg: 'hqdefault.webp',
         nameSong: 'Levitating Featuring DaBaby',
         nameArtist: 'Dua Lipa',
         timeSong: '3:55',
-        isActivate: false,
       },
       {
+        sid: '003',
+        src: 'Saweetie - Fast (Motion) [Official Music Video].mp3',
         avarImg: 'hqdefault(1).webp',
         nameSong: 'Fast (Motion)',
         nameArtist: 'Saweetie',
-        isActivate: true,
         timeSong: '3:10',
       },
       {
+        sid: '004',
+        src: 'The Weeknd & Ariana Grande - Save Your Tears (Remix) (Official Video).mp3',
         avarImg: 'hqdefault(2).webp',
         nameSong: 'Save Your Tears',
         nameArtist: 'Ariana Grande',
-        isActivate: false,
         timeSong: '3:24',
       },
       {
+        sid: '005',
+        src: 'Justin Bieber - Peaches ft. Daniel Caesar, Giveon.mp3',
         avarImg: 'hqdefault(3).webp',
         nameSong: 'Peaches ft',
         nameArtist: 'Justin Bieber',
-        isActivate: false,
         timeSong: '4:45',
       },
       {
+        sid: '006',
+        src: 'Bebe Rexha - Sabotage [Official Music Video].mp3',
         avarImg: 'hqdefault(4).webp',
         nameSong: 'Sabotage',
         nameArtist: 'Bebe Rexha',
-        isActivate: false,
         timeSong: '4:12',
       },
       {
+        sid: '007',
+        src: 'Bruno Mars, Anderson .Paak, Silk Sonic - Leave the Door Open [Official Video].mp3',
         avarImg: 'hqdefault(5).webp',
         nameSong: 'Leave the Door Open',
         nameArtist: 'Bruno Mars, Anderson .Paak, Silk Sonic',
-        isActivate: false,
         timeSong: '3:56',
       },
-      // {
-      //   avarImg: 'hqdefault(6).webp',
-      //   nameSong: 'Girl From Rio',
-      //   nameArtist: 'Anitta',
-      //   isActivate: false,
-      //   timeSong: '3:41',
-      // },
-      // {
-      //   avarImg: 'hqdefault(7).webp',
-      //   nameSong: 'Break My Heart Myself',
-      //   isActivate: false,
-      //   nameArtist: 'Bebe Rexha',
-      //   timeSong: '4:10',
-      // },
-      // {
-      //   avarImg: 'hqdefault(8).webp',
-      //   nameSong: 'RAPSTAR',
-      //   nameArtist: 'Polo G',
-      //   isActivate: false,
-      //   timeSong: '4:12',
-      // },
-      // {
-      //   avarImg: 'hqdefault(9).webp',
-      //   nameSong: 'Outta Time',
-      //   nameArtist: 'KillBunk & Dustystaytrue',
-      //   isActivate: false,
-      //   timeSong: '3:41',
-      // },
-      // {
-      //   avarImg: 'hqdefault(10).webp',
-      //   nameSong: 'On Me Remix',
-      //   nameArtist: 'Lil Baby',
-      //   isActivate: false,
-      //   timeSong: '2:45',
-      // },
+      {
+        sid: '008',
+        src: '',
+        avarImg: 'hqdefault(6).webp',
+        nameSong: 'Girl From Rio',
+        nameArtist: 'Anitta',
+        timeSong: '3:41',
+      },
+      {
+        sid: '009',
+        src: '',
+        avarImg: 'hqdefault(7).webp',
+        nameSong: 'Break My Heart Myself',
+        nameArtist: 'Bebe Rexha',
+        timeSong: '4:10',
+      },
+      {
+        sid: '009',
+        src: '',
+        avarImg: 'hqdefault(8).webp',
+        nameSong: 'RAPSTAR',
+        nameArtist: 'Polo G',
+        timeSong: '4:12',
+      },
+      {
+        sid: '010',
+        src: '',
+        avarImg: 'hqdefault(9).webp',
+        nameSong: 'Outta Time',
+        nameArtist: 'KillBunk & Dustystaytrue',
+        timeSong: '3:41',
+      },
+      {
+        sid: '011',
+        src: '',
+        avarImg: 'hqdefault(10).webp',
+        nameSong: 'On Me Remix',
+        nameArtist: 'Lil Baby',
+        timeSong: '2:45',
+      },
     ];
-
     this.topArtists = [
       { nameArtis: 'Roddy Ricch', imgArtis: '13rG4v8C_400x400.jpg' },
       {

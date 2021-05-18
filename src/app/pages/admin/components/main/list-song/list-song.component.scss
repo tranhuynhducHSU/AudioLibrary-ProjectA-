@@ -1,51 +1,25 @@
 .songs {
-  height: 3.3vw;
-  padding-left: 0.5vw;
-  padding-top: 0.5vw;
-  margin-right: 1vw;
-  margin-top: 0.3vw;
-  border-radius: 4vw;
-
-  .ArtistsImg {
-    img {
-      border-radius: 50%;
-      width: 2.8vw;
-      height: 2.8vw;
-      object-fit: cover;
-    }
-  }
-  .ArtistsInfo {
-    font-family: system-ui;
-    .nameS {
-      font-size: 1.2vw;
-      color: aliceblue;
-      margin-left: 0.7vw;
-      margin-bottom: 0;
-    }
-    .nameA {
-      font-size: 0.9vw;
-      color: #b1b3c5;
-      margin-left: 0.6vw;
-    }
-  }
-  .timeSong {
-    font-size: 0.9vw;
-    font-family: cursive;
-    padding-top: 0.4vw;
-  }
-  .iconPlay {
-    padding-top: 0.5vw;
-    mat-icon {
-      font-size: 1.4vw;
-    }
-  }
+  height: 28vw;
+  overflow-y: scroll;
 }
 
-.isActivate {
-  background-color: rgb(155, 122, 231, 0.15);
+/* width */
+::-webkit-scrollbar {
+  width: 0.8vw;
 }
 
-.left {
-  float: left;
-  overflow: hidden;
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 1vw;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #de28f442;
+  border-radius: 1vw;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #de28f4;
 }
