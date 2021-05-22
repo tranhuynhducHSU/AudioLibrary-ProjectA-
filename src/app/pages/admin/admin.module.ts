@@ -14,9 +14,27 @@ import { ListTopArtisComponent } from './components/main/list-top-artis/list-top
 import { ItemArtisComponent } from './components/main/list-top-artis/item-artis/item-artis.component';
 import { PlayListComponent } from './components/main/play-list/play-list.component';
 import { PlayListItemComponent } from './components/main/play-list/play-list-item/play-list-item.component';
+import { SpinkitModule } from '../../component/spinkit/spinkit.module';
 
 @NgModule({
-  declarations: [AdminComponent, NavComponent, MainComponent, PlayComponent, ListSongComponent, SongItemComponent, ListTopArtisComponent, ItemArtisComponent, PlayListComponent, PlayListItemComponent],
-  imports: [CommonModule, AdminRoutingModule, MaterialModule, FormsModule],
+  declarations: [
+    AdminComponent,
+    NavComponent,
+    MainComponent,
+    PlayComponent,
+    ListSongComponent,
+    SongItemComponent,
+    ListTopArtisComponent,
+    ItemArtisComponent,
+    PlayListComponent,
+    PlayListItemComponent,
+  ],
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    MaterialModule,
+    FormsModule,
+    SpinkitModule,
+  ],
 })
 export class AdminModule {}

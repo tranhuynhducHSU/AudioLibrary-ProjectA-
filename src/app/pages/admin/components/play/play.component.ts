@@ -3,12 +3,14 @@ import {
   Component,
   ElementRef,
   HostListener,
+  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
 import { ShareService } from 'src/app/services/share/share.service';
 import { SongService } from 'src/app/services/song/song.service';
 import { PlayerService } from '../../../../services/player/player.service';
+import { environment } from '../../../../../environments/environment.prod';
 
 @Component({
   selector: 'app-play',
@@ -21,6 +23,10 @@ export class PlayComponent implements OnInit, AfterViewInit {
     public sv: ShareService,
     public audioS: PlayerService
   ) {}
+
+  @Input()
+  loading: boolean;
+
   @ViewChild('audioControl', { static: false })
   audioControl: ElementRef;
   minEnd = 0;
@@ -32,7 +38,7 @@ export class PlayComponent implements OnInit, AfterViewInit {
   @HostListener('document:keyup.Space') onKeySpaceHandler(
     event: KeyboardEvent
   ) {
-    this.audioS.play();
+    this.audioS.play(this.loading);
   }
   @ViewChild('slider') slider;
 
@@ -45,8 +51,12 @@ export class PlayComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.audioS.audio = this.audioControl.nativeElement as HTMLAudioElement;
-    this.audioS.audio.src =
-      '../../../../../assets/Songs/' + this.songService.songPlaying['src'];
+    this.audioS.hls.loadSource(
+      environment.endpoint +
+        this.songService.songPlaying['src'] +
+        '/outputlist.m3u8'
+    );
+    this.audioS.hls.attachMedia(this.audioS.audio);
     this.audioS.audio.addEventListener('canplaythrough', () => {
       this.minEnd = Math.floor(this.audioS.audio.duration / 60);
       this.secEnd = (
@@ -77,27 +87,6 @@ export class PlayComponent implements OnInit, AfterViewInit {
       }
     });
   }
-  // play() {
-  //   this.songService.isPlay = !this.songService.isPlay;
-  //   if (this.songService.isPlay) {
-  //     this.audioS.audio
-  //       .play()
-  //       .then(() => {
-  //         this.audioS.audio.addEventListener('timeupdate', (currentTime) => {
-  //           this.time = Math.floor(this.audioS.audio.currentTime) + 1;
-  //           this.percentProcess =
-  //             (this.audioS.audio.currentTime / this.audioS.audio.duration) *
-  //             100;
-  //         });
-  //       })
-  //       .catch((err) => {
-  //         console.error(err);
-  //       });
-  //   } else {
-  //     this.audioS.audio.pause();
-  //     console.log('Pause');
-  //   }
-  // }
   getM(time) {
     if (time > 59) {
       return Math.floor(time / 60);

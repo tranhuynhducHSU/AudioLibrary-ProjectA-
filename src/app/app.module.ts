@@ -13,6 +13,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NavMenuComponent } from './component/nav-menu/nav-menu.component';
 import { MaterialModule } from './material-module';
 
+import { SpinkitModule } from './component/spinkit/spinkit.module';
+
 @NgModule({
   declarations: [AppComponent, NavMenuComponent],
   imports: [
@@ -24,6 +26,7 @@ import { MaterialModule } from './material-module';
     MaterialModule,
     HttpClientModule,
     MatSnackBarModule,
+    SpinkitModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

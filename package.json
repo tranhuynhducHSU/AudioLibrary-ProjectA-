@@ -24,6 +24,7 @@
     "@angular/router": "~10.2.0",
     "angular-responsive-carousel": "^2.0.2",
     "firebase": "^8.3.1",
+    "hls.js": "^1.0.5-0.canary.7394",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

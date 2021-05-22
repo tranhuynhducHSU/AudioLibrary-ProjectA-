@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import Hls from 'hls.js';
 import { PlayerService } from 'src/app/services/player/player.service';
 import { SongService } from 'src/app/services/song/song.service';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-song-item',
@@ -14,12 +16,6 @@ export class SongItemComponent implements OnInit {
 
   ngOnInit(): void {}
   changeSong() {
-    this.songService.isPlay = true;
-    this.songService.songPlaying = this.song;
-    this.audioS.audio.src =
-      '../../../../../assets/Songs/' + this.songService.songPlaying['src'];
-    this.audioS.audio.addEventListener('canplaythrough', () => {
-      this.audioS.play();
-    });
+    this.audioS.changeSong(this.song);
   }
 }

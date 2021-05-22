@@ -1,5 +1,12 @@
 Kiểm tra mạng, thông báo
 Kiểm tra server, thông báo
 Tua nhạc khi ấn vào process bar
-Time song chưa đúng
+Time song chưa đúng(trên main)
 Refresh trang load tại vị trí cũ
+Chuyển bài khi ấn trên thanh play(next)
+Chuyển bài khi end bài nhạc
+Snip load trang
+Snip load khi mạng yếu
+
+
+
