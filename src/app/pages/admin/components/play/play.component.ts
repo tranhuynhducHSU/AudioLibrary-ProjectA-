@@ -41,6 +41,7 @@ export class PlayComponent implements OnInit, AfterViewInit {
     this.audioS.play(this.loading);
   }
   @ViewChild('slider') slider;
+  @ViewChild('process') processRef: ElementRef;
 
   ngOnInit(): void {
     if (localStorage.getItem('isMute') != '0') {
@@ -100,8 +101,17 @@ export class PlayComponent implements OnInit, AfterViewInit {
     }
     return second;
   }
-  vidEnded() {
+  changeSong(type: number) {
     this.songService.isPlay = false;
+    let song;
+    if (type == -1) {
+      song = this.songService.songs[this.songService.songPlaying.index - 1];
+    } else if (type == 1) {
+      song = this.songService.songs[this.songService.songPlaying.index + 1];
+    }
+    if (song != null) {
+      this.audioS.changeSong(song);
+    }
   }
   changeVolumeTag(value: number) {
     return value;
@@ -134,5 +144,17 @@ export class PlayComponent implements OnInit, AfterViewInit {
         this.weight = this.volume;
       }
     }
+  }
+
+  changeTimeSong(event) {
+    this.audioS.pause();
+    let left = this.processRef.nativeElement.getBoundingClientRect().left;
+    let right = this.processRef.nativeElement.getBoundingClientRect().right;
+    let point = event.clientX;
+    let percent = (point - left) / (right - left);
+    this.audioS.time = this.audioS.audio.duration * percent;
+    this.audioS.audio.currentTime = this.audioS.time;
+    this.audioS.percentProcess = percent * 100;
+    this.audioS.play(false);
   }
 }

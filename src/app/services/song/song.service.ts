@@ -16,6 +16,7 @@ export class SongService {
     nameSong: '',
     nameArtist: '',
     timeSong: '',
+    index: 0,
   };
   constructor() {
     this.songs = [
@@ -26,6 +27,7 @@ export class SongService {
         nameSong: 'Nu Lounge Bar',
         nameArtist: 'Ehrling',
         timeSong: '4:45',
+        index: 0,
       },
       {
         sid: '002',
@@ -34,6 +36,7 @@ export class SongService {
         nameSong: 'Levitating Featuring DaBaby',
         nameArtist: 'Dua Lipa',
         timeSong: '3:55',
+        index: 1,
       },
       {
         sid: '003',
@@ -41,6 +44,7 @@ export class SongService {
         avarImg: 'hqdefault(1).webp',
         nameSong: 'Fast (Motion)',
         nameArtist: 'Saweetie',
+        index: 2,
         timeSong: '3:10',
       },
       {
@@ -49,6 +53,7 @@ export class SongService {
         avarImg: 'hqdefault(2).webp',
         nameSong: 'Save Your Tears',
         nameArtist: 'Ariana Grande',
+        index: 3,
         timeSong: '3:24',
       },
       {
@@ -57,6 +62,7 @@ export class SongService {
         avarImg: 'hqdefault(3).webp',
         nameSong: 'Peaches ft',
         nameArtist: 'Justin Bieber',
+        index: 4,
         timeSong: '4:45',
       },
       {
@@ -65,6 +71,7 @@ export class SongService {
         avarImg: 'hqdefault(4).webp',
         nameSong: 'Sabotage',
         nameArtist: 'Bebe Rexha',
+        index: 5,
         timeSong: '4:12',
       },
       {
@@ -73,6 +80,7 @@ export class SongService {
         avarImg: 'hqdefault(5).webp',
         nameSong: 'Leave the Door Open',
         nameArtist: 'Bruno Mars, Anderson .Paak, Silk Sonic',
+        index: 6,
         timeSong: '3:56',
       },
       {
@@ -81,6 +89,7 @@ export class SongService {
         avarImg: 'hqdefault(6).webp',
         nameSong: 'Girl From Rio',
         nameArtist: 'Anitta',
+        index: 7,
         timeSong: '3:41',
       },
       {
@@ -89,6 +98,7 @@ export class SongService {
         avarImg: 'hqdefault(7).webp',
         nameSong: 'Break My Heart Myself',
         nameArtist: 'Bebe Rexha',
+        index: 8,
         timeSong: '4:10',
       },
       {
@@ -97,6 +107,7 @@ export class SongService {
         avarImg: 'hqdefault(8).webp',
         nameSong: 'RAPSTAR',
         nameArtist: 'Polo G',
+        index: 9,
         timeSong: '4:12',
       },
       {
@@ -105,6 +116,7 @@ export class SongService {
         avarImg: 'hqdefault(9).webp',
         nameSong: 'Outta Time',
         nameArtist: 'KillBunk & Dustystaytrue',
+        index: 10,
         timeSong: '3:41',
       },
       {
@@ -113,6 +125,7 @@ export class SongService {
         avarImg: 'hqdefault(10).webp',
         nameSong: 'On Me Remix',
         nameArtist: 'Lil Baby',
+        index: 11,
         timeSong: '2:45',
       },
     ];

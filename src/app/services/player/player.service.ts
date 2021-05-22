@@ -50,6 +50,5 @@ export class PlayerService {
   pause() {
     this.songService.isPlay = false;
     this.audio.pause();
-    console.log('Pause');
   }
 }

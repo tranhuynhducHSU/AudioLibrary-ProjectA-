@@ -9,7 +9,7 @@
 </div>
 <div class="left ButtonPlay" style="width: 11%;">
     <div class="left" style="width: 27%;">
-        <mat-icon class="icon">
+        <mat-icon (click)="changeSong(-1)" class="icon">
             skip_previous
         </mat-icon>
     </div>
@@ -22,21 +22,18 @@
         </mat-icon>
     </div>
     <div class="left" style="width: 27%;">
-        <mat-icon class="icon">
+        <mat-icon (click)="changeSong(1)" class="icon">
             skip_next
         </mat-icon>
     </div>
 </div>
 <div class="left TimePlay" style="width: 3%;">
-    <!-- <div *ngIf="timeS>9" style="padding-left: 0.6vw;">{{timeM}}: {{timeS}}</div> -->
-    <!-- <div *ngIf="timeS<10" style="padding-left: 0.6vw;">{{timeM}}: {{"0"+timeS.toString()}}</div> -->
     <div style="padding-left: 0.6vw;">{{getM(audioS.time)}}: {{getS(audioS.time)}}</div>
-
-
 </div>
 <div class="left WaveMucsic" style="width: 47%;">
-    <!-- <img src="../../../../../assets/wave.png" style="width: 52vw;padding-top: 0.5vw;" alt=""> -->
-    <mat-progress-bar class="progress" mode="determinate" value="{{audioS.percentProcess}}"></mat-progress-bar>
+    <div class="boxProcess" #process (click)="changeTimeSong($event)">
+        <mat-progress-bar class="progress" mode="determinate" value="{{audioS.percentProcess}}"></mat-progress-bar>
+    </div>
 </div>
 <div class="left TimePlay" style="width: 3%;">
     <p style="padding-left: 0vw;">{{minEnd}}:{{secEnd}}</p>
@@ -52,6 +49,6 @@
 </div>
 <div class="left" style="width: 2%;"></div>
 
-<audio poster="" #audioControl playsinline webkit-playsinline (ended)="vidEnded()">
+<audio poster="" #audioControl playsinline webkit-playsinline (ended)="changeSong(1)">
 </audio>
 
