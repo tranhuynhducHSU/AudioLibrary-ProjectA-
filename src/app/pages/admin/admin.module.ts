@@ -15,6 +15,7 @@ import { ItemArtisComponent } from './components/main/list-top-artis/item-artis/
 import { PlayListComponent } from './components/main/play-list/play-list.component';
 import { PlayListItemComponent } from './components/main/play-list/play-list-item/play-list-item.component';
 import { SpinkitModule } from '../../component/spinkit/spinkit.module';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SpinkitModule } from '../../component/spinkit/spinkit.module';
     ItemArtisComponent,
     PlayListComponent,
     PlayListItemComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,

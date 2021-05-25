@@ -10,7 +10,7 @@ export class ShareService {
     let res = '';
     res = str.toString();
     if (res.length > limit) {
-      return res.slice(0, 13) + '..';
+      return res.slice(0, limit - 2) + '..';
     } else return str;
   }
   openSnackBar(message: string, action: string) {

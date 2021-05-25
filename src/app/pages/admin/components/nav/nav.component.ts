@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterService } from 'src/app/services/router/router.service';
 
 @Component({
   selector: 'app-nav',
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  constructor() {}
-  liAct = 6;
-
+  constructor(private router: RouterService) {
+    this.liAct = this.router.path;
+    console.log(this.liAct);
+  }
+  liAct;
   ngOnInit(): void {}
 
   clicked(event) {

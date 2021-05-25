@@ -12,7 +12,11 @@
         <mat-grid-tile [colspan]="21" [rowspan]="84" class="main">
             <!-- Content ở giữa -->
             <div style="width: 100%;height: 100%;background: rgba(5, 23, 109, 0.4); z-index: 5;">
-                <app-main></app-main>
+                <!-- <app-home *ngIf="routerService.path == '0'"></app-home>
+                <app-main *ngIf="routerService.path == '6'"></app-main> -->
+                <router-outlet></router-outlet>
+
+                
             </div>
         </mat-grid-tile>
 
@@ -41,7 +45,10 @@
          <mat-grid-tile [colspan]="21" [rowspan]="84" class="main">
              <!-- Content ở giữa -->
              <div style="width: 100%;height: 100%;background: rgba(5, 23, 109, 0.4); z-index: 5;">
-                <app-spinkit [idSpinkit]="2"></app-spinkit>
+                <div style="margin-top: 18vw;margin-left: 32vw;">
+                    <app-spinkit [idSpinkit]="2"></app-spinkit>
+                </div>
+                
              </div>
          </mat-grid-tile>
  

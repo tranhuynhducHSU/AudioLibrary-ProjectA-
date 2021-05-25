@@ -1,22 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MainComponent } from './pages/admin/components/main/main.component';
+import { AdminModule } from './pages/admin/admin.module';
+
+import { AdminComponent } from './pages/admin/admin.component';
+import { HomeComponent } from './pages/admin/components/home/home.component';
 
 const routes: Routes = [
   {
-    path: 'test',
-    loadChildren: () =>
-      import('./pages/test/test.module').then((m) => m.TestModule),
-  },
-  {
-    path: 'home',
-    loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
-  },
-  {
     path: '',
-    loadChildren: () =>
-      import('./pages/admin/admin.module').then((m) => m.AdminModule),
+    component: AdminComponent,
+    children: [
+      { path: '', redirectTo: 'main', pathMatch: 'full' },
+      { path: 'main', component: MainComponent },
+      { path: 'home', component: HomeComponent },
+      {
+        path: 'asdasd',
+        loadChildren: './pages/admin/admin.module#AdminModule',
+      },
+    ],
   },
+
   {
     path: 'Spinkit',
     loadChildren: () =>
