@@ -1,0 +1,35 @@
+<div *ngIf="!loadDone" style="width: 100%;height: 100%;background: rgba(5, 23, 109, 0.4); z-index: 5;">
+    <div style="margin-top: -5vw;margin-left: 32vw;padding-top: 18vw;">
+        <app-spinkit [idSpinkit]="2"></app-spinkit>
+    </div>
+</div>
+
+<div *ngIf="loadDone" class="conterner" onselectstart="return false;" onmousedown="return false;">
+    <mat-grid-list cols="15" rowHeight="1vw">
+        <mat-grid-tile [colspan]="15" [rowspan]="31">
+            <div class="list" style="width: 100%;height: 100%;">
+                <div style="height: 24vw;">
+                    <div style="width: 100%;">
+                        <div class="title left">
+                            <p>Top nghệ sĩ Việt Nam</p>
+                        </div>
+                    </div>
+                    <div class="listItemCart left">
+                        <div *ngFor="let artits of listArtits" class="item left">
+                            <div class="hover" style="width: 100%;height: 100%;"
+                                (click)="loadPlayList(artits['idSpotify'],'recForYou',artits['name'])">
+                                <img src="{{artits['img']}}" alt="">
+                                <p class="nameAl">{{s.cutString(artits['name'],13)}}</p>
+                                <p class="des">{{s.cutString("Artists",36)}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

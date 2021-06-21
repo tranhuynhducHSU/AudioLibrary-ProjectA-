@@ -786,3 +786,23 @@ body {
 .pink-snackbar {
   color: #ff00d0;
 }
+
+.menuUser + * .mat-menu-panel {
+  background: #691a73;
+  .content {
+    mat-icon {
+      font-size: 1.5vw;
+      padding-top: 0.2vw;
+    }
+    span {
+      color: white;
+      font-family: revert;
+      font-size: 0.9vw;
+      font-weight: initial;
+    }
+  }
+}
+.matMenu + * .mat-menu-panel {
+  background: #691a73;
+  width: 16vw;
+}

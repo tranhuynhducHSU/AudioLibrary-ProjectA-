@@ -1,0 +1,37 @@
+<div id="hover">
+    <div *ngIf="songService.songPlaying['Source']!=song['Source']" class="songs" (click)="changeSong()">
+        <div class="left ArtistsImg" style="width: 11%;">
+            <img class="ArtistsImg" src="{{song['Img']}}" alt="">
+        </div>
+        <div class="left ArtistsInfo" style="width: 69%;">
+            <p class="nameS">{{sv.cutString( song['NameSong'],28)}}</p>
+            <p class="nameA">{{sv.cutString( song['Artists'],30)}}</p>
+        </div>
+        <div class="timeSong left" style="width: 10%;">
+            {{song['TimeSong']}}
+        </div>
+        <div class="iconPlay left" style="width: 6%;">
+            <mat-icon class="icon">
+                video_library
+            </mat-icon>
+        </div>
+    </div>
+
+    <div *ngIf="songService.songPlaying['Source']==song['Source']" class="songs isActivate">
+        <div class="left ArtistsImg" style="width: 11%;">
+            <img class="ArtistsImg" src="{{song['Img']}}" alt="">
+        </div>
+        <div class="left ArtistsInfo" style="width: 69%;">
+            <p class="nameS">{{sv.cutString(song['NameSong'],28)}}</p>
+            <p class="nameA">{{sv.cutString(song['Artists'],30)}}</p>
+        </div>
+        <div class="timeSong left" style="width: 10%;">
+            {{song['TimeSong']}}
+        </div>
+        <div class="iconPlay left" style="width: 6%;">
+            <mat-icon class="icon">
+                video_library
+            </mat-icon>
+        </div>
+    </div>
+</div>

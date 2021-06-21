@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RouterService } from 'src/app/services/router/router.service';
 
 @Component({
@@ -7,23 +8,22 @@ import { RouterService } from 'src/app/services/router/router.service';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  constructor(private router: RouterService) {
-    this.liAct = this.router.path;
-    console.log(this.liAct);
+  constructor(private router: Router, private routerS: RouterService) {}
+  //liAct = this.routerS.navPath;
+  ngOnInit(): void {
+    console.log(this.routerS.navPath);
   }
-  liAct;
-  ngOnInit(): void {}
 
   clicked(event) {
     event.target.classList.add('act'); // To ADD
   }
   setActLi(num) {
-    if (num != this.liAct) {
+    if (num != this.routerS.navPath) {
       return false;
     }
     return true;
   }
   click(num) {
-    this.liAct = num;
+    this.routerS.setNavPath(num);
   }
 }

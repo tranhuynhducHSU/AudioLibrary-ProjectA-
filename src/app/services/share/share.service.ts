@@ -6,6 +6,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ShareService {
   constructor(private _snackBar: MatSnackBar) {}
+  isLoadDone = false;
+
   cutString(str, limit: number) {
     let res = '';
     res = str.toString();
@@ -21,5 +23,18 @@ export class ShareService {
   }
   timeout(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+  getRandomInt(max) {
+    max++;
+    return Math.floor(Math.random() * max);
+  }
+  shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
   }
 }

@@ -1,5 +1,4 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { RouterService } from 'src/app/services/router/router.service';
 import { ShareService } from 'src/app/services/share/share.service';
 import { SongService } from 'src/app/services/song/song.service';
 
@@ -11,18 +10,16 @@ import { SongService } from 'src/app/services/song/song.service';
 export class AdminComponent implements OnInit, AfterViewInit {
   constructor(
     public songService: SongService,
-    private shareService: ShareService,
-    public routerService: RouterService
+    private shareService: ShareService
   ) {}
-  isLoadDone = false;
 
   ngOnInit(): void {
-    if (this.songService.songPlaying['sid'] == '') {
-      this.songService.songPlaying = this.songService.songs[0];
-    }
+    // if (this.songService.songPlaying['Source'] == '') {
+    //   this.songService.songPlaying = this.songService.songs[0];
+    // }
   }
   async ngAfterViewInit() {
-    await this.shareService.timeout(2000);
-    this.isLoadDone = true;
+    // await this.shareService.timeout(2000);
+    // this.isLoadDone = true;
   }
 }

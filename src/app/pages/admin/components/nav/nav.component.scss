@@ -41,12 +41,10 @@
         color: #ff00d0;
       }
       li {
-        .iconMenu {
-          font-size: 1.2em;
-          padding-right: 3%;
-        }
+        height: 1.7vw;
+        width: 10vw;
+        padding-right: 2.1vw;
         padding-top: 0.3vw;
-        padding-right: 0em;
         padding-left: 2.4vw;
         font-size: 0.9em;
         font-weight: regular;
@@ -54,10 +52,14 @@
         background-position: left 15px center;
         background-size: auto 20px;
         transition: all 0.15s linear;
+        .iconMenu {
+          font-size: 1.2em;
+          padding-right: 3%;
+          margin-top: 0.24vw;
+        }
         &:hover {
           background-color: #431681;
         }
-
         &:focus {
           outline: none;
         }
@@ -68,4 +70,7 @@
 
 .act {
   background-color: #431681;
+}
+.left {
+  float: left;
 }

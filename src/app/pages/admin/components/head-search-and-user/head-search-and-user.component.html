@@ -1,0 +1,127 @@
+<div style="height: 5vw;width: 100%;">
+    <div class="search left">
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label style="color: cornsilk;font-family: system-ui;">Search for songs, artists...
+                </mat-label>
+                <input width="13vw" matInput placeholder="" autocomplete="off">
+                <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+        </p>
+    </div>
+    <div class="user left" [matMenuTriggerFor]="menu2">
+        <div class="left">
+            <p>Brielle Bogan</p>
+        </div>
+        <div class="left">
+            <div class="ArtistsImg" style="width: 4%;">
+                <img class="" src="../../../../../assets/Img/avata.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<mat-menu mat-icon-button #menu="matMenu" xPosition="before" backdropClass="menuUser" style="width: 10vw;">
+    <div class="content">
+        <button mat-menu-item>
+            <mat-icon>account_circle</mat-icon>
+            <span>Account</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>library_music</mat-icon>
+            <span>Your library</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>whatshot</mat-icon>
+            <span>add_shopping_cart</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </div>
+</mat-menu>
+
+<mat-menu mat-icon-button #menu1="matMenu" xPosition="before" backdropClass="menuUser" style="width: 10vw;">
+    <div class="content">
+        <button mat-menu-item>
+            <mat-icon>login</mat-icon>
+            <span>Login</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>perm_contact_calendar</mat-icon>
+            <span>Register</span>
+        </button>
+    </div>
+</mat-menu>
+
+<mat-menu mat-icon-button #menu2="matMenu" xPosition="before" backdropClass="matMenu">
+    <div class="colName">
+        <div class="left">
+            <div class="ArtistsImg">
+                <img class="" src="../../../../../assets/Img/avata.jpg" alt="">
+            </div>
+        </div>
+        <div class="left">
+            <p class="name">Brielle Bogan</p>
+            <p class="sub">View you profile</p>
+        </div>
+    </div>
+    <nav class="menu" tabindex="0">
+        <div class="menu-content">
+            <ul>
+                <li tabindex="0" class="icon-customers">
+                    <div class="left icon">
+                        <mat-icon class="iconMenu">
+                            library_music
+                        </mat-icon>
+                    </div>
+                    <div class="left title"><span>Your library</span></div>
+                    <div class="left iconNext">
+                        <mat-icon class="iconMenu">
+                            navigate_next
+                        </mat-icon>
+                    </div>
+                    <br>
+                </li>
+                <li tabindex="0" class="icon-customers">
+                    <div class="left icon">
+                        <mat-icon class="iconMenu">
+                            settings
+                        </mat-icon>
+                    </div>
+                    <div class="left title"> <span>Setting</span> </div>
+                    <div class="left iconNext">
+                        <mat-icon class="iconMenu">
+                            navigate_next
+                        </mat-icon>
+                    </div>
+                    <br>
+                </li>
+                <li tabindex="0" class="icon-customers">
+                    <div class="left icon">
+                        <mat-icon class="iconMenu">
+                            add_shopping_cart
+                        </mat-icon>
+                    </div>
+                    <div class="left title"><span>Upgrade premium</span></div>
+                    <div class="left iconNext">
+                        <mat-icon class="iconMenu">
+                            navigate_next
+                        </mat-icon>
+                    </div>
+                    <br>
+                </li>
+                <li tabindex="0" class="icon-users">
+                    <div class="left icon">
+                        <mat-icon class="iconMenu">
+                            logout
+                        </mat-icon>
+                    </div>
+                    <div class="title"><span>Logout</span></div>
+                    <br>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</mat-menu>

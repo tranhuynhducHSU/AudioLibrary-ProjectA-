@@ -1,11 +1,12 @@
 <div class="left" style="width: 2%;"></div>
 <div class="left" style="width: 2%;"></div>
 <div class="left ArtistsImg" style="width: 4%;">
-    <img *ngIf="loading == false" class="ArtistsImg" src="../../../../../assets/Songs/img/{{songService.songPlaying.avarImg}}" alt="">
+    <img *ngIf="songService.songPlaying.Img != ''" class="ArtistsImg" src="{{songService.songPlaying.Img}}" alt="">
+
 </div>
 <div class="left ArtistsInfo" style="width: 12%;">
-    <p  *ngIf="loading == false" class="nameS">{{sv.cutString(songService.songPlaying.nameSong,15)}}</p>
-    <p  *ngIf="loading == false" class="nameA">{{sv.cutString(songService.songPlaying.nameArtist,19)}}</p>
+    <p *ngIf="loading == false" class="nameS">{{sv.cutString(songService.songPlaying.NameSong,15)}}</p>
+    <p *ngIf="loading == false" class="nameA">{{sv.cutString(songService.songPlaying.Artists,19)}}</p>
 </div>
 <div class="left ButtonPlay" style="width: 11%;">
     <div class="left" style="width: 27%;">
@@ -51,4 +52,3 @@
 
 <audio poster="" #audioControl playsinline webkit-playsinline (ended)="changeSong(1)">
 </audio>
-

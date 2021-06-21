@@ -52,11 +52,6 @@ export class PlayComponent implements OnInit, AfterViewInit {
   }
   ngAfterViewInit(): void {
     this.audioS.audio = this.audioControl.nativeElement as HTMLAudioElement;
-    this.audioS.hls.loadSource(
-      environment.endpoint +
-        this.songService.songPlaying['src'] +
-        '/outputlist.m3u8'
-    );
     this.audioS.hls.attachMedia(this.audioS.audio);
     this.audioS.audio.addEventListener('canplaythrough', () => {
       this.minEnd = Math.floor(this.audioS.audio.duration / 60);
@@ -105,9 +100,9 @@ export class PlayComponent implements OnInit, AfterViewInit {
     this.songService.isPlay = false;
     let song;
     if (type == -1) {
-      song = this.songService.songs[this.songService.songPlaying.index - 1];
+      song = this.songService.songs[this.songService.songPlaying.Index - 1];
     } else if (type == 1) {
-      song = this.songService.songs[this.songService.songPlaying.index + 1];
+      song = this.songService.songs[this.songService.songPlaying.Index + 1];
     }
     if (song != null) {
       this.audioS.changeSong(song);

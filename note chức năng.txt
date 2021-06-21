@@ -9,4 +9,12 @@ Snip load trang
 Snip load khi mạng yếu
 
 
+3 trang chính là (home) show các cat
+		(litsSong) list detail
+			song detail
+
+load more
+trở về list đang hát
+
+
 
