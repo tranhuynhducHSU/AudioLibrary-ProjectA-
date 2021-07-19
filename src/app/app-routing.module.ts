@@ -20,6 +20,8 @@ const routes: Routes = [
       { path: 'artists', component: ListForListSongComponent },
       { path: 'playlists', component: PlaylistComponent },
       { path: 'chart', component: ChartMusicComponent },
+      { path: 'store', component: MainComponent },
+
       {
         path: 'asdasdz31z',
         loadChildren: './pages/admin/admin.module#AdminModule',

@@ -20,7 +20,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     let linkLocalStore = localStorage.getItem('playlistLink');
     this.loadDone = false;
     if (linkLocalStore == null) {
-      this.songService.songs = this.songService.songsLiked;
+      this.songService.songs = this.songService.songsStore;
       this.loadDone = true;
     } else {
       await this.shareS.timeout(200);

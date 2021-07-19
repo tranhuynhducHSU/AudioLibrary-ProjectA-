@@ -37,4 +37,11 @@ export class ShareService {
     }
     return array;
   }
+  public showSnackbarFail(): void {
+    this._snackBar.open(`Sorry, Please try it lated!!!`, '⚙️', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+    });
+  }
 }

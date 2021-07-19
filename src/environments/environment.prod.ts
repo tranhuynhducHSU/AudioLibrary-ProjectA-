@@ -10,6 +10,5 @@ export const environment = {
     measurementId: 'G-JGNQMJD5FR',
   },
   endpoint: 'https://intense-stream-61699.herokuapp.com/',
-  //endpoint: 'http://127.0.0.1:8080/',
   localhost: 'http://localhost:3000/',
 };

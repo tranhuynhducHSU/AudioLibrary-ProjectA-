@@ -37,50 +37,22 @@ export class UserService {
   }
 
   async loginWithGG() {
+    let provider = new firebase.default.auth.GoogleAuthProvider();
+
     let res = await this.auth.signInWithPopup(
-      new firebase.default.auth.GoogleAuthProvider()
+      provider.setCustomParameters({
+        prompt: 'select_account',
+      })
     );
-    res.user.getIdToken().then((e) => {
-      this.idToken = e;
-      console.log(e);
-    });
     if (res.user) {
-      await this.createUser(
-        res.user.displayName,
-        res.user.email,
-        res.user.photoURL,
-        res.user.uid,
-        res.user.phoneNumber,
-        ''
-      );
+      this.user = res.user;
       this.showSnackbarSuccessful('LOGIN');
-      this.router.navigate(['']);
     }
   }
 
-  // async loginWithAccount(ID, PW: string) {
-  //   let users: any = await this.httpClient.get(this.endpoint + 'user', {
-  //     params: { uid: ID }
-  //   }).toPromise()
-  //   console.log(users.res)
-  //   console.log(users.res.password)
-
-  //   if (users.res.password != undefined && users.res.password == PW) {
-  //     this.changeUserView(users.res)
-  //     this.router.navigate(['']);
-  //     this.showSnackbarSuccessful('LOGIN')
-  //   }
-  //   else if (!users || users.password != PW) {
-  //     this.showSnackbarFail('LOGIN')
-  //   }
-  //   else {
-  //     this.showSnackbarFail('LOGIN')
-  //   }
-  // }
-  logOut() {
-    this.auth.signOut();
-    this.changeUserView(null);
-    this.router.navigate(['/signin']);
+  async logOut() {
+    await this.auth.signOut();
+    await this.changeUserView(null);
   }
   async createUser(displayName, email, photoURL, uid, phone, password) {
     let res: any = await this.httpClient
@@ -116,7 +88,6 @@ export class UserService {
     return false;
   }
   changeUserView(userNew) {
-    this.auth.signOut();
     localStorage.setItem('user', JSON.stringify(userNew));
     this.user = userNew;
     console.log(JSON.parse(localStorage.getItem('user')));
@@ -130,7 +101,7 @@ export class UserService {
     });
   }
   public showSnackbarFail(val: string): void {
-    this.snackBar.open(`${val} Failed, Please try it again!!!`, '❌', {
+    this.snackBar.open(`${val} Sorry, Please try it lated!!!`, '❌', {
       duration: 3000,
       horizontalPosition: 'center',
       verticalPosition: 'bottom',

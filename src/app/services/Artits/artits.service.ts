@@ -9,14 +9,12 @@ export class ArtitsService {
   constructor(private http: HttpClient) {}
 
   async getAllArtits() {
-    let res = await this.http
-      .get(environment.localhost + 'artists')
-      .toPromise();
+    let res = await this.http.get(environment.endpoint + 'artists').toPromise();
     return res;
   }
   async getArtits(count) {
     let res = await this.http
-      .get(environment.localhost + 'artists', {
+      .get(environment.endpoint + 'artists', {
         params: {
           count: count,
         },

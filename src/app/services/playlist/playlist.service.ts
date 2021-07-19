@@ -20,7 +20,7 @@ export class PlaylistService {
   playlistsForPage;
   async getSongOfPlayList(id) {
     let res = await this.http
-      .get(environment.localhost + 'song/playlist', {
+      .get(environment.endpoint + 'song/playlist', {
         params: {
           id: id,
         },
@@ -29,18 +29,22 @@ export class PlaylistService {
     return res;
   }
   async getSongOfPlayListWithLink(link) {
-    let res = await this.http
-      .get(environment.localhost + 'song/playlist', {
-        params: {
-          link: link,
-        },
-      })
-      .toPromise();
-    return res;
+    if (link == '') {
+      return this.songS.songsStore;
+    } else {
+      let res = await this.http
+        .get(environment.endpoint + 'song/playlist', {
+          params: {
+            link: link,
+          },
+        })
+        .toPromise();
+      return res;
+    }
   }
   async getPlaylistsOfCat(id) {
     let res = await this.http
-      .get(environment.localhost + 'category', {
+      .get(environment.endpoint + 'category', {
         params: {
           id: id,
         },
@@ -50,7 +54,7 @@ export class PlaylistService {
   }
   async getPlaylists(indexNext) {
     let res = await this.http
-      .get(environment.localhost + 'playlist', {
+      .get(environment.endpoint + 'playlist', {
         params: {
           indexNext: indexNext,
         },
@@ -81,5 +85,6 @@ export class PlaylistService {
     localStorage.setItem('playlistLink', link);
     localStorage.setItem('playlistCatID', idCat);
     localStorage.setItem('playlistCatName', catName);
+    console.log({ link: link, idCat: idCat, catName: catName });
   }
 }

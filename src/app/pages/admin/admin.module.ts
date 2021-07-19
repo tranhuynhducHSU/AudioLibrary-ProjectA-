@@ -20,6 +20,7 @@ import { HeadSearchAndUserComponent } from './components/head-search-and-user/he
 import { ListForListSongComponent } from './components/content/artists/list-for-list-song.component';
 import { PlaylistComponent } from './components/content/playlist/playlist.component';
 import { ChartMusicComponent } from './components/content/chart-music/chart-music.component';
+import { AdminSongsComponent } from './components/content/admin-songs/admin-songs.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ChartMusicComponent } from './components/content/chart-music/chart-musi
     ListForListSongComponent,
     PlaylistComponent,
     ChartMusicComponent,
+    AdminSongsComponent,
   ],
   imports: [
     CommonModule,

@@ -24,6 +24,7 @@ export class RouterService {
     } else if (num == 4) {
       this.router.navigate(['songs']);
     } else if (num == 5) {
+      this.router.navigate(['store']);
     } else if (num == 6) {
     } else if (num == 7) {
     } else if (num == 8) {

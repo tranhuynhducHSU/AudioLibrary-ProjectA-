@@ -8,8 +8,7 @@ export class SongService {
   songs;
   topArtists;
   playLists = [];
-  songsLiked;
-
+  songsStore = [];
   songPlaying = {
     Sid: '',
     Source: '',
@@ -20,7 +19,7 @@ export class SongService {
     Index: 0,
   };
   constructor() {
-    this.songsLiked = [
+    this.songsStore = [
       {
         Sid: '001',
         Source: 'SthlmSunset',
